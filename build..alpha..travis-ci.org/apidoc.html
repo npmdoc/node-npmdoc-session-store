@@ -1,0 +1,1064 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >session-store (v0.0.6)</a>
+</h1>
+<h4>A generic session store adapter</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store">module session-store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Manager">
+            function <span class="apidocSignatureSpan">session-store.</span>Manager
+            <span class="apidocSignatureSpan">(store)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Middleware">
+            function <span class="apidocSignatureSpan">session-store.</span>Middleware
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.RedisStore">
+            function <span class="apidocSignatureSpan">session-store.</span>RedisStore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session">
+            function <span class="apidocSignatureSpan">session-store.</span>Session
+            <span class="apidocSignatureSpan">(store, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Store">
+            function <span class="apidocSignatureSpan">session-store.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">session-store.</span>Manager.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">session-store.</span>RedisStore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">session-store.</span>Session.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">session-store.</span>Store.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.Manager">module session-store.Manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Manager.Manager">
+            function <span class="apidocSignatureSpan">session-store.</span>Manager
+            <span class="apidocSignatureSpan">(store)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.Manager.prototype">module session-store.Manager.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Manager.prototype.createSession">
+            function <span class="apidocSignatureSpan">session-store.Manager.prototype.</span>createSession
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.RedisStore">module session-store.RedisStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.RedisStore.RedisStore">
+            function <span class="apidocSignatureSpan">session-store.</span>RedisStore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.RedisStore.prototype">module session-store.RedisStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.RedisStore.prototype._get">
+            function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>_get
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.RedisStore.prototype.destroy">
+            function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.RedisStore.prototype.get">
+            function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>get
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.RedisStore.prototype.save">
+            function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>save
+            <span class="apidocSignatureSpan">(id, data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.Session">module session-store.Session</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session.Session">
+            function <span class="apidocSignatureSpan">session-store.</span>Session
+            <span class="apidocSignatureSpan">(store, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.Session.prototype">module session-store.Session.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session.prototype.destroy">
+            function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session.prototype.flush">
+            function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>flush
+            <span class="apidocSignatureSpan">(force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session.prototype.get">
+            function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session.prototype.set">
+            function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>set
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Session.prototype.toJSON">
+            function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.Store">module session-store.Store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Store.Store">
+            function <span class="apidocSignatureSpan">session-store.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.session-store.Store.prototype">module session-store.Store.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Store.prototype.get">
+            function <span class="apidocSignatureSpan">session-store.Store.prototype.</span>get
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.session-store.Store.prototype.save">
+            function <span class="apidocSignatureSpan">session-store.Store.prototype.</span>save
+            <span class="apidocSignatureSpan">(id, data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store" id="apidoc.module.session-store">module session-store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Manager" id="apidoc.element.session-store.Manager">
+        function <span class="apidocSignatureSpan">session-store.</span>Manager
+        <span class="apidocSignatureSpan">(store)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Manager(store){
+	this.store = store;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var express = require(&#x27;express&#x27;);
+var SS = require(&#x27;session-store&#x27;);
+var cookieParser = require(&#x27;cookie-parser&#x27;);
+
+var server = express();
+
+var SessionManager = new SS.<span class="apidocCodeKeywordSpan">Manager</span>(new SS.RedisStore());
+
+server.use(cookieParser());
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Middleware" id="apidoc.element.session-store.Middleware">
+        function <span class="apidocSignatureSpan">session-store.</span>Middleware
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Middleware = function (options){
+	options = options || {};
+	options = _.defaults(options, {
+		alwaysFlush: true,
+		waitForFlush: true,
+		cookieKey: &#x27;session-store&#x27;,
+		salt: &#x27;session-salt&#x27;,
+		cookie: _.defaults(options.cookie || {}, {
+			path: &#x27;/&#x27;,
+			expires: new Date(Date.now() + 60 * 60 * 24 * 1000),
+			httpOnly: true,
+			secure: false
+		}),
+		sessionManager: new Manager(new Store())
+	});
+
+	return function(req, res, next){
+		var oldEnd = res.end;
+		var cookie = req.cookies[options.cookieKey];
+		if(!cookie){
+			cookie = uuid.v1();
+			res.cookie(options.cookieKey, cookie, options.cookie);
+		}
+		var sessionId = cookie;
+		var internalSessionId = generateInternalSessionId(options.salt, sessionId);
+
+		options.sessionManager.createSession(internalSessionId)
+		.then(function(session){
+
+			req.session = session;
+
+			res.end = function(){
+				var args = _.values(arguments);
+
+				if(req.session._dirty || options.alwaysFlush){
+					if(options.waitForFlush){
+						return req.session.flush()
+						.then(function(){
+							oldEnd.apply(res, args);
+						});
+					} else {
+						req.session.flush();
+					}
+				}
+				oldEnd.apply(res, args);
+			};
+
+			next();
+		});
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var server = express();
+
+var SessionManager = new SS.Manager(new SS.RedisStore());
+
+server.use(cookieParser());
+
+server.use(new SS.<span class="apidocCodeKeywordSpan">Middleware</span>({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+}));
+
+server.get(&#x27;/&#x27;, function(req, res){
+	req.session.set({ someAttribute: &#x27;foobar&#x27; });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.RedisStore" id="apidoc.element.session-store.RedisStore">
+        function <span class="apidocSignatureSpan">session-store.</span>RedisStore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RedisStore(options){
+	this.redis = new redis(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var express = require(&#x27;express&#x27;);
+var SS = require(&#x27;session-store&#x27;);
+var cookieParser = require(&#x27;cookie-parser&#x27;);
+
+var server = express();
+
+var SessionManager = new SS.Manager(new SS.<span class="apidocCodeKeywordSpan">RedisStore</span>());
+
+server.use(cookieParser());
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session" id="apidoc.element.session-store.Session">
+        function <span class="apidocSignatureSpan">session-store.</span>Session
+        <span class="apidocSignatureSpan">(store, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Session(store, id){
+	var self = this;
+
+	self.store = store;
+	self.id = id;
+
+	self._dirty = false;
+	self.attributes = {};
+
+	return self.store.get(id)
+	.then(function(data){
+		data = data || {};
+		self.attributes = data;
+		return self;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+*/
+```
+
+#### new SS.<span class="apidocCodeKeywordSpan">Session</span>(SS.Store store, string id)
+
+- ```store``` is an instance object that implements SS.Store
+- ```id``` is a unique string to identify the session
+
+#### Session.prototype.set(object data [, boolean forceFlush])
+
+- ```data``` is a object to store
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Store" id="apidoc.element.session-store.Store">
+        function <span class="apidocSignatureSpan">session-store.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(){
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.Manager" id="apidoc.module.session-store.Manager">module session-store.Manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Manager.Manager" id="apidoc.element.session-store.Manager.Manager">
+        function <span class="apidocSignatureSpan">session-store.</span>Manager
+        <span class="apidocSignatureSpan">(store)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Manager(store){
+	this.store = store;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var express = require(&#x27;express&#x27;);
+var SS = require(&#x27;session-store&#x27;);
+var cookieParser = require(&#x27;cookie-parser&#x27;);
+
+var server = express();
+
+var SessionManager = new SS.<span class="apidocCodeKeywordSpan">Manager</span>(new SS.RedisStore());
+
+server.use(cookieParser());
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.Manager.prototype" id="apidoc.module.session-store.Manager.prototype">module session-store.Manager.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Manager.prototype.createSession" id="apidoc.element.session-store.Manager.prototype.createSession">
+        function <span class="apidocSignatureSpan">session-store.Manager.prototype.</span>createSession
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSession = function (id){
+	if(!id){
+		id = uuid.v1();
+	}
+
+	return new Session(this.store, id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Manager
+
+```javascript
+var SS = require(&#x27;session-store&#x27;);
+
+var manager = new SS.Manager();
+
+var session = manager.<span class="apidocCodeKeywordSpan">createSession</span>();
+
+```
+
+#### new SS.Manager(SS.Store store)
+- ```SS.Store``` an optional object that implements the SS.Store interface
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.RedisStore" id="apidoc.module.session-store.RedisStore">module session-store.RedisStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.RedisStore.RedisStore" id="apidoc.element.session-store.RedisStore.RedisStore">
+        function <span class="apidocSignatureSpan">session-store.</span>RedisStore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RedisStore(options){
+	this.redis = new redis(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var express = require(&#x27;express&#x27;);
+var SS = require(&#x27;session-store&#x27;);
+var cookieParser = require(&#x27;cookie-parser&#x27;);
+
+var server = express();
+
+var SessionManager = new SS.Manager(new SS.<span class="apidocCodeKeywordSpan">RedisStore</span>());
+
+server.use(cookieParser());
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.RedisStore.prototype" id="apidoc.module.session-store.RedisStore.prototype">module session-store.RedisStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.RedisStore.prototype._get" id="apidoc.element.session-store.RedisStore.prototype._get">
+        function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>_get
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_get = function (id){
+	var self = this;
+
+	return self.redis.ready
+	.then(function(){
+		return self.redis.get(id)
+		.then(function(data){
+			var json = {};
+
+			try {
+				json = JSON.parse(data);
+			} catch(e){}
+
+			return json || {};
+		});
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.RedisStore.prototype.destroy" id="apidoc.element.session-store.RedisStore.prototype.destroy">
+        function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (id){
+	var self = this;
+
+	return self.redis.ready
+	.then(function(){
+		return self.redis.del(id);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+session.get();
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+*/
+
+session.<span class="apidocCodeKeywordSpan">destroy</span>();
+
+
+session.toJSON();
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.RedisStore.prototype.get" id="apidoc.element.session-store.RedisStore.prototype.get">
+        function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>get
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id){
+	var self = this;
+	return self._get(id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+}));
+
+server.<span class="apidocCodeKeywordSpan">get</span>(&#x27;/&#x27;, function(req, res){
+	req.session.set({ someAttribute: &#x27;foobar&#x27; });
+	res.send(200);
+});
+
+/*
+	If run after hitting GET /, this will dump:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.RedisStore.prototype.save" id="apidoc.element.session-store.RedisStore.prototype.save">
+        function <span class="apidocSignatureSpan">session-store.RedisStore.prototype.</span>save
+        <span class="apidocSignatureSpan">(id, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (id, data){
+	var self = this;
+
+	return self.redis.ready
+	.then(function(){
+		return self.redis.set(id, JSON.stringify(data));
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.Session" id="apidoc.module.session-store.Session">module session-store.Session</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session.Session" id="apidoc.element.session-store.Session.Session">
+        function <span class="apidocSignatureSpan">session-store.</span>Session
+        <span class="apidocSignatureSpan">(store, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Session(store, id){
+	var self = this;
+
+	self.store = store;
+	self.id = id;
+
+	self._dirty = false;
+	self.attributes = {};
+
+	return self.store.get(id)
+	.then(function(data){
+		data = data || {};
+		self.attributes = data;
+		return self;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+*/
+```
+
+#### new SS.<span class="apidocCodeKeywordSpan">Session</span>(SS.Store store, string id)
+
+- ```store``` is an instance object that implements SS.Store
+- ```id``` is a unique string to identify the session
+
+#### Session.prototype.set(object data [, boolean forceFlush])
+
+- ```data``` is a object to store
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.Session.prototype" id="apidoc.module.session-store.Session.prototype">module session-store.Session.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session.prototype.destroy" id="apidoc.element.session-store.Session.prototype.destroy">
+        function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (){
+	this.attributes = {};
+	this._dirty = true;
+	return this.store.destroy(this.id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+session.get();
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+*/
+
+session.<span class="apidocCodeKeywordSpan">destroy</span>();
+
+
+session.toJSON();
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session.prototype.flush" id="apidoc.element.session-store.Session.prototype.flush">
+        function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>flush
+        <span class="apidocSignatureSpan">(force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function (force){
+	var self = this;
+
+	if(self._dirty || force){
+		return self.store.save(self.id, self.attributes)
+		.then(function(){
+			self._dirty = false;
+		});
+	} else {
+		self._dirty = false;
+		return q.resolve();
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var session = manager.createSession();
+
+session.set({ someKey: &#x27;someValue&#x27; });
+session.set(&#x27;someKey&#x27;, &#x27;someValue&#x27;);
+session.set(&#x27;someKey&#x27;, &#x27;someValue&#x27;, true);
+
+session.<span class="apidocCodeKeywordSpan">flush</span>();
+
+
+session.get();
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session.prototype.get" id="apidoc.element.session-store.Session.prototype.get">
+        function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key){
+	return this.attributes[key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+}));
+
+server.<span class="apidocCodeKeywordSpan">get</span>(&#x27;/&#x27;, function(req, res){
+	req.session.set({ someAttribute: &#x27;foobar&#x27; });
+	res.send(200);
+});
+
+/*
+	If run after hitting GET /, this will dump:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session.prototype.set" id="apidoc.element.session-store.Session.prototype.set">
+        function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>set
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (){
+	var self = this;
+	self._dirty = true;
+
+	var forceFlush = false;
+	if(_.isObject(arguments[0])){
+		self.attributes = _.extend(self.attributes, arguments[0]);
+		forceFlush = !!arguments[1];
+	} else {
+		self.attributes[arguments[0]] = arguments[1];
+		forceFlush = !!arguments[2];
+	}
+
+	if(forceFlush){
+		return self.flush();
+	}
+	return q.resolve();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+}));
+
+server.get(&#x27;/&#x27;, function(req, res){
+	req.session.<span class="apidocCodeKeywordSpan">set</span>({ someAttribute: &#x27;foobar&#x27; });
+	res.send(200);
+});
+
+/*
+	If run after hitting GET /, this will dump:
+	
+	{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Session.prototype.toJSON" id="apidoc.element.session-store.Session.prototype.toJSON">
+        function <span class="apidocSignatureSpan">session-store.Session.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function (){
+	return this.attributes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		someKey: &#x27;someValue&#x27;
+	}
+*/
+
+session.destroy();
+
+
+session.<span class="apidocCodeKeywordSpan">toJSON</span>();
+/*
+	{
+		someKey: &#x27;someValue&#x27;
+	}
+*/
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.Store" id="apidoc.module.session-store.Store">module session-store.Store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Store.Store" id="apidoc.element.session-store.Store.Store">
+        function <span class="apidocSignatureSpan">session-store.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(){
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.session-store.Store.prototype" id="apidoc.module.session-store.Store.prototype">module session-store.Store.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Store.prototype.get" id="apidoc.element.session-store.Store.prototype.get">
+        function <span class="apidocSignatureSpan">session-store.Store.prototype.</span>get
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id){
+	return q.resolve();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+server.use(new SS.Middleware({
+	sessionManager: SessionManager,
+	cookieKey: &#x27;my-cookie-key&#x27;,
+	salt: &#x27;my-salt&#x27;
+}));
+
+server.<span class="apidocCodeKeywordSpan">get</span>(&#x27;/&#x27;, function(req, res){
+	req.session.set({ someAttribute: &#x27;foobar&#x27; });
+	res.send(200);
+});
+
+/*
+	If run after hitting GET /, this will dump:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.session-store.Store.prototype.save" id="apidoc.element.session-store.Store.prototype.save">
+        function <span class="apidocSignatureSpan">session-store.Store.prototype.</span>save
+        <span class="apidocSignatureSpan">(id, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (id, data){
+	return q.resolve();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
